@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mcberrapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcberrapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mcberrapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mcberrapipelinesjavascriptdocker 
+          image: mcipriabacr.azurecr.io/mcberrapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
